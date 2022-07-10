@@ -129,6 +129,16 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
+        setState(() {});
+      } else {
+        // ! User Feed
+        loadCurrentUserFeedData();
+
+        userFeedSub = dp.getFeedStream(userId: widget.userId).listen((_) {
+          loadCurrentUserFeedData();
+        });
+
+        // print(dp.isFollowingUserPubliclyOrPrivately(widget.userId));
 
         if (!dp.isFollowingUserPubliclyOrPrivately(widget.userId)) {
           final User initialUser = users.get(widget.userId);
