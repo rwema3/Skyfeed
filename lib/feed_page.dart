@@ -129,6 +129,18 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    if (userFeedSub != null) userFeedSub.cancel();
+    if (mainFeedSub != null) mainFeedSub.cancel();
+    if (notificationsSub != null) notificationsSub.cancel();
+
+    if (userSub != null) {
+      userSub.cancel();
+
+      dp.removeProfileStream(widget.userId, localId);
+    }
     // _controller.dispose();
 
     super.dispose();
