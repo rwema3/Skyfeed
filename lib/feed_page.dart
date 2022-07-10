@@ -129,6 +129,11 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
+
+
+  final int localId = dp.getLocalId();
+  final FocusNode _focusNode = FocusNode();
+
   @override
   void dispose() {
     _focusNode.dispose();
