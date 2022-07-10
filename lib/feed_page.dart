@@ -129,19 +129,6 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
-    // _controller.dispose();
-
-    super.dispose();
-  }
-
-  StreamSubscription userFeedSub;
-  StreamSubscription mainFeedSub;
-  StreamSubscription notificationsSub;
-
-  StreamSubscription userSub;
-
-  bool isCommentView = false;
-
   void _loadFeedData() async {
     print('_loadFeedData ${widget.userId}  ${widget.postId}');
 
