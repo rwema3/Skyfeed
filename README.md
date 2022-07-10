@@ -10,8 +10,7 @@ SkyFeed is a decentralized SkyDB-based alternative to Twitter, YouTube and Insta
   <img src="https://siasky.net/vAKfnEw6qYwa033x39vJWqmdrw2vYeVCjhRb_bVDr36SrQ" width="250">
 </p>
 
-## Developer Rwema D. Bagirishya
+## Developer
+> Rwema D. Bagirishya
 
-MIT License
-
-Copyright (c) 2020 redsolver
+God bless!
