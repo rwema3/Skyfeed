@@ -129,19 +129,6 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
-  void _loadFeedData() async {
-    print('_loadFeedData ${widget.userId}  ${widget.postId}');
-
-    if (widget.userId != null) {
-      if (widget.postId != null) {
-        dp.log('feed/comments', widget.postId);
-
-        isCommentView = true;
-
-        posts = [
-          await dp.getPost('${widget.userId}/feed/${widget.postId}'),
-        ];
-
         setState(() {});
       } else {
         // ! User Feed
