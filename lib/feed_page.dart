@@ -129,7 +129,15 @@ class _FeedPageState extends State<FeedPage> {
       }
     }
 
-
+    if (newIndex != null) {
+      itemScrollController.scrollTo(
+        index: newIndex,
+        alignment: 0.02,
+        //alignment: alignment + 0.1,
+        duration: Duration(milliseconds: 100),
+      );
+    }
+  }
 
   final int localId = dp.getLocalId();
   final FocusNode _focusNode = FocusNode();
