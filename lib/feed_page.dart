@@ -130,16 +130,6 @@ class _FeedPageState extends State<FeedPage> {
     }
 
 
-        if (!dp.isFollowingUserPubliclyOrPrivately(widget.userId)) {
-          final User initialUser = users.get(widget.userId);
-
-          if (initialUser?.skyfeedId == null) {
-            userSub =
-                dp.getProfileStream(widget.userId, localId).listen((event) {
-              dp.checkFollowingUpdater();
-            });
-          }
-
           dp.addTemporaryUserForFeedPage(widget.userId);
 
           // TODO getProfileStream, then recheck
