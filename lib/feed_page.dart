@@ -321,24 +321,6 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
-    if (mounted) {
-      setState(() {});
-    }
-  }
-
-  bool _isProcessingBatchAction = false;
-
-  @override
-  Widget build(BuildContext context) {
-    if (posts == null)
-      return Padding(
-        padding: const EdgeInsets.only(top: 32),
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: CircularProgressIndicator(),
-        ),
-      );
-
     int itemCount = widget.postId != null ? 1 : posts.length;
 
     if (isMobile) {
