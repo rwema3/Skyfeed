@@ -321,6 +321,13 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
+    tmpPosts.removeWhere((element) => element.isDeleted == true);
+    tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
+
+    if (posts?.length == tmpPosts.length) return; // TODO Better checksum :D
+
+    posts = tmpPosts;
+
     if (mounted) {
       setState(() {});
     }
