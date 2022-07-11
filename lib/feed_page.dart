@@ -321,6 +321,15 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
+    final remainingSpacing = freeSpace - (widget.maxWidth ?? 0);
+
+    double leftSpacing =
+        widget.center ? remainingSpacing / 2 : widget.sidePadding + 332;
+
+    double rightSpacing = widget.center
+        ? remainingSpacing / 2
+        : max(remainingSpacing - leftSpacing, 0);
+
     if (leftSpacing < widget.sidePadding + 332) {
       leftSpacing = widget.sidePadding + 332;
     }
