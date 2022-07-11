@@ -310,14 +310,17 @@ class _FeedPageState extends State<FeedPage> {
 
       final Feed fp = await feedPages.get('${widget.userId}/feed/posts/$i');
 
-    
-    tmpPosts.removeWhere((element) => element.isDeleted == true);
-    tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
+      if (fp != null) {
+        fp.items.forEach((p) {
+          p.feedId = 'posts/$i';
+          p.userId = widget.userId;
+        });
 
-    if (posts?.length == tmpPosts.length) return; // TODO Better checksum :D
+        tmpPosts.addAll(fp.items);
 
-    posts = tmpPosts;
-
+        dp.log('feed/user', 'add ${fp.items.length} items');
+      }
+    }
     if (mounted) {
       setState(() {});
     }
