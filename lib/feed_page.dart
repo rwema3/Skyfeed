@@ -321,6 +321,20 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
+    return RawKeyboardListener(
+      focusNode: _focusNode,
+      autofocus: true,
+      onKey: _handleKeyEvent,
+      child: ScrollablePositionedList.separated(
+        // key: PageStorageKey('list-${widget.userId}-${widget.postId}'),
+        padding: isMobile
+            ? null
+            : EdgeInsets.only(
+                top: (isMobile || widget.showBackButton) ? 0 : 32,
+                left: leftSpacing + widget.sidePadding,
+                right: rightSpacing + widget.sidePadding //widget.sidePadding,
+                ),
+
         itemScrollController: itemScrollController,
         itemPositionsListener: itemPositionsListener,
         // controller: _controller,
