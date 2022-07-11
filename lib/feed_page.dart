@@ -321,6 +321,16 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
+
+    if (widget.isNotificationsPage) {
+      itemCount++;
+    }
+    /* itemCount++; */
+
+    print('[build] FeedPage ${widget.userId}');
+
+    final freeSpace = MediaQuery.of(context).size.width;
+
     final remainingSpacing = freeSpace - (widget.maxWidth ?? 0);
 
     double leftSpacing =
