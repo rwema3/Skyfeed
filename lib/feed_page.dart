@@ -321,6 +321,14 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
+    if (leftSpacing < widget.sidePadding + 332) {
+      leftSpacing = widget.sidePadding + 332;
+    }
+
+    if (widget.center && rightSpacing < widget.sidePadding + 332) {
+      rightSpacing = widget.sidePadding + 332;
+    }
+
     return RawKeyboardListener(
       focusNode: _focusNode,
       autofocus: true,
