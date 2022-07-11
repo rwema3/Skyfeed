@@ -321,20 +321,6 @@ class _FeedPageState extends State<FeedPage> {
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
     }
-    int itemCount = widget.postId != null ? 1 : posts.length;
-
-    if (isMobile) {
-      if (widget.userId != null && widget.postId == null) {
-        itemCount++;
-      }
-    } else {
-      if (widget.userId == null && !rd.isNotificationsPage) {
-        itemCount++;
-      }
-      if (widget.showBackButton) {
-        itemCount++;
-      }
-    }
 
     if (widget.isNotificationsPage) {
       itemCount++;
