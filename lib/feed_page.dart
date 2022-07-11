@@ -320,7 +320,16 @@ class _FeedPageState extends State<FeedPage> {
 
         dp.log('feed/user', 'add ${fp.items.length} items');
       }
-    }           padding: const EdgeInsets.symmetric(vertical: 4.0),
+    }
+        itemScrollController: itemScrollController,
+        itemPositionsListener: itemPositionsListener,
+        // controller: _controller,
+        itemCount: itemCount, // TODO +1
+        itemBuilder: (context, index) {
+          if (widget.showBackButton && !rd.isMobile) {
+            if (index == 0) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0),
                 child: SizedBox(
                   height: 24,
                   child: InkWell(
