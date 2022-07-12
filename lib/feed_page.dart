@@ -293,6 +293,19 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
+                    onTap: () {
+                      /*   if (rd.currentConfiguration.isPostPage) {
+                        rd.setUserId(rd.selectedUserId);
+                      } else { */
+
+                      if (rd.history.length <= 1) {
+                        rd.setHomePage();
+                      } else {
+                        rd.pop();
+                      }
+
+                      //}
+                    },
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
