@@ -306,6 +306,11 @@ class _FeedPageState extends State<FeedPage> {
     for (int i = currentPostsPointer; i > currentPostsPointer - 2; i--) {
       if (i < 0) continue;
 
+      dp.log('feed/user', 'load ${widget.userId}/feed/posts/$i');
+
+      final Feed fp = await feedPages.get('${widget.userId}/feed/posts/$i');
+
+    
     tmpPosts.removeWhere((element) => element.isDeleted == true);
     tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
 
