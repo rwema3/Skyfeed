@@ -293,6 +293,19 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
+        itemScrollController: itemScrollController,
+        itemPositionsListener: itemPositionsListener,
+        // controller: _controller,
+        itemCount: itemCount, // TODO +1
+        itemBuilder: (context, index) {
+          if (widget.showBackButton && !rd.isMobile) {
+            if (index == 0) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                child: SizedBox(
+                  height: 24,
+                  child: InkWell(
+                    borderRadius: borderRadius,
                     onTap: () {
                       /*   if (rd.currentConfiguration.isPostPage) {
                         rd.setUserId(rd.selectedUserId);
