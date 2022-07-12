@@ -293,6 +293,14 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
+
+    if (widget.isNotificationsPage) {
+      itemCount++;
+    }
+    /* itemCount++; */
+
+    print('[build] FeedPage ${widget.userId}');
+
     final freeSpace = MediaQuery.of(context).size.width;
 
     final remainingSpacing = freeSpace - (widget.maxWidth ?? 0);
