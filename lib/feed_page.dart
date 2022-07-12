@@ -293,20 +293,6 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
-
-  bool _isProcessingBatchAction = false;
-
-  @override
-  Widget build(BuildContext context) {
-    if (posts == null)
-      return Padding(
-        padding: const EdgeInsets.only(top: 32),
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: CircularProgressIndicator(),
-        ),
-      );
-
     int itemCount = widget.postId != null ? 1 : posts.length;
 
     if (isMobile) {
