@@ -293,20 +293,6 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
-    final freeSpace = MediaQuery.of(context).size.width;
-
-    final remainingSpacing = freeSpace - (widget.maxWidth ?? 0);
-
-    double leftSpacing =
-        widget.center ? remainingSpacing / 2 : widget.sidePadding + 332;
-
-    double rightSpacing = widget.center
-        ? remainingSpacing / 2
-        : max(remainingSpacing - leftSpacing, 0);
-
-    if (leftSpacing < widget.sidePadding + 332) {
-      leftSpacing = widget.sidePadding + 332;
-    }
 
     if (widget.center && rightSpacing < widget.sidePadding + 332) {
       rightSpacing = widget.sidePadding + 332;
