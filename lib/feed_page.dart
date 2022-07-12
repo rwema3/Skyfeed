@@ -293,6 +293,13 @@ class _FeedPageState extends State<FeedPage> {
     print('loadHomeFeedData setState');
 
     if (mounted) setState(() {});
+  }
+
+  void loadCurrentUserFeedData() async {
+    dp.log('feed/user', 'load');
+
+    List<Post> tmpPosts = [];
+
 
     tmpPosts.removeWhere((element) => element.isDeleted == true);
     tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
