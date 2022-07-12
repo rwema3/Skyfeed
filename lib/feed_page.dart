@@ -300,11 +300,6 @@ class _FeedPageState extends State<FeedPage> {
 
     List<Post> tmpPosts = [];
 
-    final int currentPostsPointer =
-        pointerBox.get('${widget.userId}/feed/posts') ?? 0;
-
-    for (int i = currentPostsPointer; i > currentPostsPointer - 2; i--) {
-      if (i < 0) continue;
 
     tmpPosts.removeWhere((element) => element.isDeleted == true);
     tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
