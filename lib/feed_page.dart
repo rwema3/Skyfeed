@@ -294,18 +294,6 @@ class _FeedPageState extends State<FeedPage> {
 
     if (mounted) setState(() {});
 
-    tmpPosts.removeWhere((element) => element.isDeleted == true);
-    tmpPosts.sort((a, b) => b.postedAt.compareTo(a.postedAt));
-
-    if (posts?.length == tmpPosts.length) return; // TODO Better checksum :D
-
-    posts = tmpPosts;
-
-    if (mounted) {
-      setState(() {});
-    }
-  }
-
   bool _isProcessingBatchAction = false;
 
   @override
