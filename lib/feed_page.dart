@@ -457,11 +457,6 @@ class _FeedPageState extends State<FeedPage> {
           }
            */
 
-          if (p.followNotificationFor != null) {
-            return NotificationUserFollowWidget(
-              userId: p.followNotificationFor,
-            );
-          }
 
           if (p.repostOf != null || p.mentionOf != null) {
             return FutureBuilder<Post>(
