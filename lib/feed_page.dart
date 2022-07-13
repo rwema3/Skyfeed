@@ -456,13 +456,6 @@ class _FeedPageState extends State<FeedPage> {
             return Text(widget.userId.toString());
           }
            */
-                      : PopupMenuButton<String>(
-                          onSelected: (String result) async {
-                            if (result == 'acceptAll') {
-                              setState(() {
-                                _isProcessingBatchAction = true;
-                              });
-
                               try {
                                 for (final userId
                                     in dp.notificationsFollow.keys) {
