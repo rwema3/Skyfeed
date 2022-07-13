@@ -456,6 +456,19 @@ class _FeedPageState extends State<FeedPage> {
             return Text(widget.userId.toString());
           }
            */
+                  /*  RaisedButton(
+                    child: Text('Accept all'),
+                    onPressed: () async {
+                  
+                    },
+                  ), */
+                ],
+              );
+            }
+            index--;
+          }
+
+          final p = posts[index];
 
           if (p.followNotificationFor != null) {
             return NotificationUserFollowWidget(
