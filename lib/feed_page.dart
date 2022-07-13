@@ -465,6 +465,11 @@ class _FeedPageState extends State<FeedPage> {
               index--;
             }
           } else {
+            if (widget.userId == null && !rd.isNotificationsPage) {
+              if (index == 0) {
+                if (AppState.userId == null) {
+                  return LoginHintWidget();
+                } else {
         
                   Text(
                     'Notifications',
