@@ -457,15 +457,6 @@ class _FeedPageState extends State<FeedPage> {
           }
            */
 
-          if (isMobile) {
-            if (widget.userId != null && widget.postId == null) {
-              if (index == 0) {
-                return ContextPage();
-              }
-              index--;
-            }
-          } else {
-        
                   Text(
                     'Notifications',
                     style: titleTextStyle,
