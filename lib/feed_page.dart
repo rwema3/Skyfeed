@@ -456,6 +456,19 @@ class _FeedPageState extends State<FeedPage> {
             return Text(widget.userId.toString());
           }
            */
+                              try {
+                                for (final userId
+                                    in dp.notificationsFollow.keys) {
+                                  dp.followers[userId] = {};
+                                }
+                                await dp.setFollowersFile();
+
+                                dp.notificationsFollow = {};
+
+                                await dp.setNotificationsFollowFile();
+                              } catch (e) {
+                                // TODO Show error
+                              }
 
                               setState(() {
                                 _isProcessingBatchAction = false;
