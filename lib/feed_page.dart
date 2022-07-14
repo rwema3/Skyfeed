@@ -450,6 +450,13 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
+            index--;
+          }
+/*         if (index == 0) {
+            return Text(widget.userId.toString());
+          }
+           */
+
           
           } else {
             if (widget.userId == null && !rd.isNotificationsPage) {
