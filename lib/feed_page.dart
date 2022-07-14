@@ -450,6 +450,20 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
+          
+                              setState(() {
+                                _isProcessingBatchAction = false;
+                              });
+                            }
+                          },
+                          itemBuilder: (BuildContext context) =>
+                              <PopupMenuEntry<String>>[
+                            const PopupMenuItem<String>(
+                              value: 'acceptAll',
+                              child: Text('Accept all followers'),
+                            ),
+                          ],
+                        ),
                   /*  RaisedButton(
                     child: Text('Accept all'),
                     onPressed: () async {
