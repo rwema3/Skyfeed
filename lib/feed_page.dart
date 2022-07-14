@@ -451,6 +451,21 @@ class _FeedPageState extends State<FeedPage> {
               );
             }
           
+                print(snapshot.data.commentTo);
+
+                if (p.mentionOf != null) {
+                  return Stack(
+                    children: [
+                      PostWidget(
+                        snapshot.data,
+                        key: ValueKey(snapshot.data.fullPostId),
+                        showMentionContext: true,
+                      ),
+                      closeNotificationWidget,
+                    ],
+                  );
+                }
+
                 return PostWidget(
                   snapshot.data,
                   key: ValueKey(snapshot.data.fullPostId),
