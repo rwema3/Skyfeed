@@ -450,12 +450,7 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-          if (p.repostOf != null || p.mentionOf != null) {
-            return FutureBuilder<Post>(
-              future: dp.getPost(p.repostOf ?? p.mentionOf),
-              builder: (context, snapshot) {
-                // TODO Optimize
-
+          
                 final closeNotificationWidget = Align(
                   alignment: Alignment.topRight,
                   child: InkWell(
