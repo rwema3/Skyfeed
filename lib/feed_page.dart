@@ -450,6 +450,16 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
+          
+                final closeNotificationWidget = Align(
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () async {
+                      dp.notificationsMention.remove(p.mentionOf);
+                      loadNotificationsData();
+
+                      dp.setNotificationsMentionFileDelayed();
+
                       /* await dp.mention(
                         p.mentionOf,
                         AppState.userId,
