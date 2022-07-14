@@ -450,14 +450,6 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-          
-          if (widget.isNotificationsPage) {
-            if (index == 0) {
-              return Row(
-                children: [
-                  SizedBox(
-                    width: 8,
-                  ),
                   Text(
                     'Notifications',
                     style: titleTextStyle,
