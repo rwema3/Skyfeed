@@ -450,15 +450,6 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-          
-          final p = posts[index];
-
-          if (p.followNotificationFor != null) {
-            return NotificationUserFollowWidget(
-              userId: p.followNotificationFor,
-            );
-          }
-
           if (p.repostOf != null || p.mentionOf != null) {
             return FutureBuilder<Post>(
               future: dp.getPost(p.repostOf ?? p.mentionOf),
