@@ -457,13 +457,7 @@ class _FeedPageState extends State<FeedPage> {
           }
            */
 
-          if (isMobile) {
-            if (widget.userId != null && widget.postId == null) {
-              if (index == 0) {
-                return ContextPage();
-              }
-              index--;
-            }
+          
           } else {
             if (widget.userId == null && !rd.isNotificationsPage) {
               if (index == 0) {
