@@ -450,7 +450,15 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-          
+                                await dp.setFollowersFile();
+
+                                dp.notificationsFollow = {};
+
+                                await dp.setNotificationsFollowFile();
+                              } catch (e) {
+                                // TODO Show error
+                              }
+
                               setState(() {
                                 _isProcessingBatchAction = false;
                               });
