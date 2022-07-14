@@ -450,18 +450,7 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-                  /*  RaisedButton(
-                    child: Text('Accept all'),
-                    onPressed: () async {
-                  
-                    },
-                  ), */
-                ],
-              );
-            }
-            index--;
-          }
-
+          
           final p = posts[index];
 
           if (p.followNotificationFor != null) {
