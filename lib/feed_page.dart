@@ -451,6 +451,19 @@ class _FeedPageState extends State<FeedPage> {
               );
             }
           
+          } else {
+            if (widget.userId == null && !rd.isNotificationsPage) {
+              if (index == 0) {
+                if (AppState.userId == null) {
+                  return LoginHintWidget();
+                } else {
+                  return CreatePostWidget();
+                }
+              }
+              index--;
+            }
+          }
+
           if (widget.isNotificationsPage) {
             if (index == 0) {
               return Row(
