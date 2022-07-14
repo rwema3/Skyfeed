@@ -450,30 +450,6 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-                      /* await dp.mention(
-                        p.mentionOf,
-                        AppState.userId,
-                        remove: true,
-                      ); */
-                      //setState(() {});
-                    },
-                    child: Material(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(4),
-                        topRight: Radius.circular(8),
-                      ),
-                      color: SkyColors.red,
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Icon(
-                          Icons.close,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-
                 if (snapshot.data == null)
                   return Stack(
                     children: [
