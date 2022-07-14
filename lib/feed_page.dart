@@ -450,18 +450,6 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-                      : PopupMenuButton<String>(
-                          onSelected: (String result) async {
-                            if (result == 'acceptAll') {
-                              setState(() {
-                                _isProcessingBatchAction = true;
-                              });
-
-                              try {
-                                for (final userId
-                                    in dp.notificationsFollow.keys) {
-                                  dp.followers[userId] = {};
-                                }
                                 await dp.setFollowersFile();
 
                                 dp.notificationsFollow = {};
