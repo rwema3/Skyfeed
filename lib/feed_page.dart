@@ -450,20 +450,6 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-                  Text(
-                    'Notifications',
-                    style: titleTextStyle,
-                  ),
-                  Spacer(),
-                  _isProcessingBatchAction
-                      ? Padding(
-                          padding: const EdgeInsets.all(7.0),
-                          child: SizedBox(
-                            height: 26,
-                            width: 26,
-                            child: CircularProgressIndicator(),
-                          ),
-                        )
                       : PopupMenuButton<String>(
                           onSelected: (String result) async {
                             if (result == 'acceptAll') {
