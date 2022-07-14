@@ -450,7 +450,26 @@ class _FeedPageState extends State<FeedPage> {
                 ),
               );
             }
-          
+                if (snapshot.data == null)
+                  return Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        decoration: getCardDecoration(context),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            'Loading post...',
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ),
+                      ),
+                      if (widget.isNotificationsPage) closeNotificationWidget,
+                    ],
+                  );
+
                 print(snapshot.data.commentTo);
 
                 if (p.mentionOf != null) {
